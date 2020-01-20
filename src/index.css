@@ -1,13 +1,268 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FBFBFB;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  transition: 0.3s all;
+  user-select: none;
+}
+
+aside {
+  margin: 0, auto;
+}
+
+:root {
+  --text: #04395e;
+}
+
+.App {
+  margin: 0 auto;
+  width: 600px;
+  box-shadow: 0 3px 15px #0000001a;
+
+  position: relative;
+  top: 0px;
+  font-size: 20px;
+  font-weight: 100px;
+  text-align: center;
+}
+
+aside h1 {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(175, 47, 47, 0.15);
+    margin: 0 auto;
+}
+
+.action-btn {
+  display: flex;
+  border-top: 1px solid #e6e6e6;
+
+}
+
+.task-done input {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+.new-todo {
+  background-color: #fbfbfb;
+  padding: 30px 16px 30px 150px;
+  border: none;
+  font-size: 30px;
+  width: 400px
+}
+
+.new-todo:focus {
+  outline:none !important;
+}
+
+.new-todo::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-style: oblique;
+}
+
+span {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.footer {
+  color: #777;
+  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+
+  box-shadow: 
+  0 1px 1px rgba(0, 0, 0, 0.2), 
+  0 8px 0 -3px #f6f6f6, 
+  0 9px 1px -3px rgba(0, 0, 0, 0.2), 
+  0 16px 0 -6px #f6f6f6, 
+  0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+#itemsLeft {
+  margin-top: 5px;
+  float: left;
+}
+
+#clearCompleted {
+  margin-top: 5px;
+  float: right;
+}
+
+
+input[type="checkbox"] {
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    content:'';
+    background-color: transparent;
+}
+
+
+
+.toggle:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.everyoneToggle{
+  font: 400 25px Arial;
+  border: none;
+  background-color: #fbfbfb;
+  height: 70px;
+  margin-top: 5px;
+  margin-left: 20px;
+  width: 480px;
+  color: rgb(45, 45, 45);
+}
+
+.everyoneToggle:focus {
+  outline:none !important;
+}
+
+.spanX {
+  color: rgb(255, 255, 255, 1)
+}
+
+.action-btn:hover .spanX {
+  font-size: 40px;
+  margin-right: 25px;
+  margin-top: 15px;
+  color: rgba(244, 61, 61, 0.3);
+  font: Arial;
+}
+
+#mainCheckbox {
+  position: absolute;
+  margin-top: 50px;
+  height: 40px;
+  background: #fbfbfb;
+  text-align: center;
+  width: 40px;
+  margin: 20px 10px 20px -55px;
+}
+
+.task-input {
+  width: 400px;
+}
+
+
+
+
+.round {
+  position: relative;
+  margin-left: 20px;
+  margin-top: 23px;
+}
+
+.round label {
+  background-color: #fbfbfb;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+.form-group {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 23px;
+}
+
+.form-group label {
+  background-color: #fbfbfb;
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  cursor: pointer;
+  height: 40px;
+  left: 0;
+  position: absolute;
+  margin-top: 28px;
+  margin-left: 60px;
+  width: 40px;
+}
+
+.form-group label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.form-group input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.form-group input[type="checkbox"]:checked + label {
+  background-color: grey;
+  border-color: grey;
+}
+
+.form-group input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
